@@ -2,9 +2,9 @@
 
 ## The Problem
 
-PC builders know what parts they have but not what to buy next. Corsair's product catalogue has 200+ SKUs across cases, cooling, RAM, fans, peripherals — and no good way to answer "what should I actually get for my build?" Generic product pages don't show how components look together. Recommendation engines without taste signals produce generic results.
+PC builders know what parts they have, their requirements and constraints, but not what to buy next. Corsair's product catalogue has 200+ SKUs across cases, cooling, RAM, fans, peripherals but no easy way to answer "what should I actually get for my build?". Once you have a build, upsell decisions are primarily made based on community clout, but this isn't available on the corsair website.
 
-The result: high browse-to-purchase drop-off and missed upsell opportunities across the Corsair ecosystem.
+The result: High browse-to-purchase drop-off and missed upsell opportunities across the Corsair ecosystem.
 
 ---
 
@@ -41,7 +41,7 @@ flowchart LR
 
 | Metric | What it measures |
 |---|---|
-| **Gallery → Recommendations rate** | Are users engaged enough to select builds and continue? |
+| **Discovery → Gallery → Recommendations rate** | Are users engaged enough to select builds and continue? |
 | **Builds selected per session** | Depth of inspiration exploration (target: 2–4) |
 | **Refinement loops per session** | Conversational engagement; higher = stronger product-market fit signal |
 | **Budget accuracy** | `|recommended_total - budget| / budget` — lower is better |
