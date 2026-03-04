@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+frontend/node_modules/
+
+# Build output (Render builds this at deploy time)
+frontend/dist/
+
+# OS
+.DS_Store
