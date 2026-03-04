@@ -2,7 +2,8 @@
 
 ## The Problem
 
-PC builders know what parts they have, their requirements and constraints, but not what to buy next. Corsair's product catalogue has 200+ SKUs across cases, cooling, RAM, fans, peripherals but no easy way to answer "what should I actually get for my build?". Once you have a build, upsell decisions are primarily made based on community clout, but this isn't available on the corsair website.
+PC builders know their parts, constraints, and performance goals, but they don’t know what to buy next. Corsair has 200+ SKUs across cases, cooling, RAM, fans, and peripherals, yet there’s no intelligent way to answer the core question: “What should I actually add to my build?”
+Today, upsell decisions are driven by community clout (What’s trending on Reddit, YouTube, and Discord), not by guidance on Corsair’s own site. That signal exists, but it isn’t captured or surfaced where purchase decisions happen.
 
 The result: High browse-to-purchase drop-off and missed upsell opportunities across the Corsair ecosystem.
 
@@ -16,7 +17,9 @@ A 3-step advisor that turns aesthetic preference into a personalized Corsair sho
 2. **Inspiration gallery** — real r/Corsair community builds; user picks what resonates
 3. **AI recommendations** — GPT-4o uses the selected builds as taste signal to pick Corsair products within budget, with a natural language refinement loop
 
-The key insight: the build selection step captures taste that sliders can't — "I want *this* vibe" — making recommendations feel personal, not algorithmic.
+The key insight: the build selection step captures taste that sliders can't - "I want *this* vibe", making recommendations feel personal, not algorithmic.
+
+[Try out the prototype here!](https://corsair-build-advisor.onrender.com/)
 
 ---
 
@@ -39,14 +42,14 @@ flowchart LR
 
 ## Success Metrics
 
-| Metric | What it measures |
-|---|---|
-| **Discovery → Gallery → Recommendations rate** | Are users engaged enough to select builds and continue? |
-| **Builds selected per session** | Depth of inspiration exploration (target: 2–4) |
-| **Refinement loops per session** | Conversational engagement; higher = stronger product-market fit signal |
-| **Budget accuracy** | `|recommended_total - budget| / budget` — lower is better |
-| **Corsair.com click-through rate** | Intent to purchase from the recommendation cards |
-| **Ecosystem breadth** | Avg # of distinct Corsair categories per recommendation set |
+| Category | Metric | What it measures |
+|---|---|---|
+|Discovery and funnel | **Discovery → Gallery → Recommendation rate** | Are users engaged enough to select builds and continue? |
+|Engagement | **Builds selected per session** | Depth of inspiration exploration (target: 2–4) |
+|Engagement | **Refinement loops per session** | Conversational engagement; higher = stronger product-market fit signal |
+|Conversion | **Corsair.com click-through rate** | Intent to purchase from the recommendation cards |
+|Revenue | **Revenue** | Actual purchases made/revenue contributed |
+
 
 ---
 
