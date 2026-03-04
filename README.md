@@ -1,8 +1,52 @@
 # Corsair Build Advisor
 
-An AI-powered PC build advisor that helps you discover inspiring community builds and get personalized Corsair product recommendations.
+## The Problem
 
-**Flow:** Enter your specs → browse real Reddit builds for inspiration → select what you like → get AI-curated Corsair recommendations within your budget → refine with natural language.
+PC builders know what parts they have but not what to buy next. Corsair's product catalogue has 200+ SKUs across cases, cooling, RAM, fans, peripherals — and no good way to answer "what should I actually get for my build?" Generic product pages don't show how components look together. Recommendation engines without taste signals produce generic results.
+
+The result: high browse-to-purchase drop-off and missed upsell opportunities across the Corsair ecosystem.
+
+---
+
+## The Solution
+
+A 3-step advisor that turns aesthetic preference into a personalized Corsair shopping list:
+
+1. **Specs in** — CPU, GPU, budget, priorities (visual / performance / value)
+2. **Inspiration gallery** — real r/Corsair community builds; user picks what resonates
+3. **AI recommendations** — GPT-4o uses the selected builds as taste signal to pick Corsair products within budget, with a natural language refinement loop
+
+The key insight: the build selection step captures taste that sliders can't — "I want *this* vibe" — making recommendations feel personal, not algorithmic.
+
+---
+
+## Flow
+
+```mermaid
+flowchart LR
+    A([User]) -->|specs + priorities| B[Build Form]
+    B -->|keyword search| C[(200 Reddit\nBuilds Cache)]
+    C --> D[Inspiration Gallery]
+    D -->|selected builds| E{GPT-4o Agent}
+    E -->|get_corsair_products| F[(Product\nCatalog)]
+    F --> E
+    E -->|streaming SSE| G[Recommendations]
+    G -->|natural language| E
+    G -->|click-through| H[Corsair.com]
+```
+
+---
+
+## Success Metrics
+
+| Metric | What it measures |
+|---|---|
+| **Gallery → Recommendations rate** | Are users engaged enough to select builds and continue? |
+| **Builds selected per session** | Depth of inspiration exploration (target: 2–4) |
+| **Refinement loops per session** | Conversational engagement; higher = stronger product-market fit signal |
+| **Budget accuracy** | `|recommended_total - budget| / budget` — lower is better |
+| **Corsair.com click-through rate** | Intent to purchase from the recommendation cards |
+| **Ecosystem breadth** | Avg # of distinct Corsair categories per recommendation set |
 
 ---
 
@@ -44,14 +88,6 @@ Open [localhost:5173](http://localhost:5173).
 ---
 
 ## Deployment (Render)
-
-```bash
-# Build frontend first
-cd frontend && npm run build && cd ..
-
-# Then uvicorn serves everything on one port
-uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-```
 
 Connect the GitHub repo on [render.com](https://render.com) — it auto-detects `render.yaml`. Add `OPENAI_API_KEY` in the Render environment tab.
 
